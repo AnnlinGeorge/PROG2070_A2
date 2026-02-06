@@ -50,8 +50,15 @@ namespace Assignment2
         }
         public Rectangle(int length, int width)
         {
+            if (SetLength(length)==-1)
+                this.length = 1;
+            else
             this.length = length;
-            this.width = width;
+
+            if (SetWidth(width) == -1)
+                this.width = 1;
+            else
+                this.width = width;
         }
 
     }

@@ -1,0 +1,96 @@
+﻿using Assignment2;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2Tests
+{
+    [TestFixture]
+    public class TestingGetLength
+    {
+        [Test]
+        public void TestGetLength_MinLength_1() {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+            int expected = 1;
+            // ACT
+            int actual = rectangle.GetLength();
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void TestGetLength_JustAboveMAXLenth_3501()
+        {
+            // Arrange
+            int length = 3501;
+            int width = 10;
+            Rectangle rectangle = new Rectangle(length, width);
+            int expected = 1;
+            // ACT
+            int actual = rectangle.GetLength();
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestGetLength_ValidInput_700()
+        {
+            // Arrange
+            int length = 700;
+            int width = 10;
+            Rectangle rectangle = new Rectangle(length, width);
+            int expected = 700;
+            // ACT
+            int actual = rectangle.GetLength();
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+    }
+
+    [TestFixture]
+    public class TestingSetLength
+    {
+        [Test]
+        public void TestSetLength_MinLength_0()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+            int length = 0;
+            int expected = -1;
+            // ACT
+            int actual = rectangle.SetLength(length);
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void TestSetLength_JustAboveMAXLength_3501()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+            int length = 3501;
+            int expected = -1;
+            // ACT
+            int actual = rectangle.SetLength(length);
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void TestSetLength_ValidInput_700()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+            int length = 700;
+            int expected = 700;
+            // ACT
+            int actual = rectangle.SetLength(length);
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+    }
+}
