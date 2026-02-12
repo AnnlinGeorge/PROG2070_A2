@@ -2,7 +2,7 @@ using Assignment_2;
 
 namespace Assignment2.Tests
 {
-    [TestFixture]
+    [TestFixture] //Annlin Padammatturmel George 
     public class TestingGetLength
     {
         [Test]
@@ -46,9 +46,11 @@ namespace Assignment2.Tests
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+
     }
 
-    [TestFixture]
+    [TestFixture] //Annlin Padammatturmel George
     public class TestingSetLength
     {
         [Test]
@@ -88,7 +90,7 @@ namespace Assignment2.Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
     }
-    [TestFixture]
+    [TestFixture] //Marcelo Rivera 
     public class TestingGetWidth
     {
         [Test]
@@ -130,7 +132,7 @@ namespace Assignment2.Tests
         }
     }
 
-    [TestFixture]
+    [TestFixture] //Marcelo Rivera 
     public class TestingSetWidth
     {
         [Test]
@@ -170,6 +172,110 @@ namespace Assignment2.Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+    }
+
+    [TestFixture] //Nohelis Rangel
+    public class TestingGetPerimeter
+    {
+        [Test]
+        public void TestGetPerimeter_MinLength_1()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle();
+
+            int expected = 4;
+
+            //Act
+
+            int actual = rectangle.GetPerimeter();
+
+            //Assert
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestGetPerimeter_JustAboveMAXWidth_3501()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(3501, 3501);
+            int expected = 4;
+
+            //Act
+            int actual = rectangle.GetPerimeter();
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestGetPerimeter_ValidInput_700()
+        {
+
+            //Arrange
+            Rectangle rectangle = new Rectangle(700, 700);
+            int expected = 2800;
+            //Act
+            int actual = rectangle.GetPerimeter();
+
+            //Assert
+
+            Assert.That(actual, Is.EqualTo(expected));
+
+        }
+
+
+    }
+
+    [TestFixture] //Nohelis Rangel
+    public class TestingGetArea
+    {
+        [Test]
+
+        public void TestGetArea_MinLength_1()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle();
+            int expected = 1;
+
+            //Act
+
+            int actual = rectangle.GetArea();
+
+            //Assert
+
+            Assert.That(actual, Is.EqualTo(expected));
+
+        }
+
+        [Test]
+        public void TestGetArea_JustAboveMAXWidth_3501()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(3501, 3501);
+            int expected = 1;
+
+            // Act
+            int actual = rectangle.GetArea();
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+
+        [Test]
+        public void TestGetArea_ValidInput_700()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(700, 700);
+            int expected = 490000;
+
+            // Act
+            int actual = rectangle.GetArea();
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 
 
