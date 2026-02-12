@@ -1,18 +1,13 @@
-﻿using Assignment2;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assignment_2;
 
-namespace Assignment2Tests
+namespace Assignment2.Tests
 {
     [TestFixture]
     public class TestingGetLength
     {
         [Test]
-        public void TestGetLength_MinLength_1() {
+        public void TestGetLength_MinLength_1()
+        {
             // Arrange
             Rectangle rectangle = new Rectangle();
             int expected = 1;
@@ -93,4 +88,6 @@ namespace Assignment2Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
     }
+
+
 }
